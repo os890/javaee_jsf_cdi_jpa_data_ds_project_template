@@ -1,0 +1,36 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                template="/templates/template.xhtml">
+
+    <ui:define name="content">
+        <h:panelGrid columns="3">
+            <h:outputLabel value="Key:" for="key"/>
+            <h:inputText id="key" value="#{configController.newConfigEntry.entryKey}"/>
+            <h:message for="key"/>
+
+            <h:outputLabel value="Value:" for="value"/>
+            <h:inputText id="value" value="#{configController.newConfigEntry.value}"/>
+            <h:message for="value"/>
+        </h:panelGrid>
+        <h:commandButton value="save" action="#{configController.save}"/>
+
+        <hr/>
+
+        <h:dataTable var="currentConfigEntry" value="#{configController.storedEntries}">
+            <h:column>
+                <f:facet name="header">
+                    Key
+                </f:facet>
+                #{currentConfigEntry.entryKey}
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    Value
+                </f:facet>
+                #{currentConfigEntry.value}
+            </h:column>
+        </h:dataTable>
+    </ui:define>
+</ui:composition>

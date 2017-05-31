@@ -27,10 +27,10 @@
     <packaging>war</packaging>
 
     <name>Java-EE/JSF/CDI/JPA/Data/DS-Test Project-Template</name>
-    <version>1.5.2</version>
+    <version>1.7.0</version>
 
     <properties>
-        <ds.version>1.5.2</ds.version>
+        <ds.version>1.7.0</ds.version>
         <owb15.version>1.7.0</owb15.version>
         <weld.version>2.4.1.Final</weld.version>
     </properties>
